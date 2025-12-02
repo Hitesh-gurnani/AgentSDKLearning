@@ -1,0 +1,25 @@
+{
+  "name": "agentsdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+   "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitesh-gurnani/AgentSDKLearning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hitesh-gurnani/AgentSDKLearning/issues"
+  },
+  "homepage": "https://github.com/Hitesh-gurnani/AgentSDKLearning#readme",
+  "dependencies": {
+    "@openai/agents": "^0.3.3",
+    "dotenv": "^17.2.3",
+    "zod": "^3.25.76"
+  }
+}
