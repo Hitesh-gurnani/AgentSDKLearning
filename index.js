@@ -11,6 +11,11 @@ const openai = new OpenAI({
 import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const GetWeatherResultSchema = z.object({
+  city: z.string().describe("The city to get the weather of"),
+  degree_c: z.number().describe("The temperature in degrees Celsius"),
+  condition: z.string().describe("The condition of the weather"),
+});
 
 const getWeatherTool = tool({
   name: "getWeather",
@@ -50,6 +55,7 @@ const helloAgent = new Agent({
     name: "Hello Agent",
     instructions: 'You are an expert in the field of weather. You can get the weather of a city and send weather information via email when requested.',
     tools: [getWeatherTool, sendEmailTool],
+    outputType: GetWeatherResultSchema
 });
 
 async function main(query) {
